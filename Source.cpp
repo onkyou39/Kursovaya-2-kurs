@@ -174,12 +174,14 @@ void writeFile(std::string filename)
 
 void changeElement(unsigned int num)
 {
+	bool notFound = true;
 	if (database.size() != 0)
 	{
 		for (int i = 0; i < database.size(); i++)
 		{
 			if (database[i].logicNumber == num)
 			{
+				notFound = false;
 				std::cout << "Предыдущее значеие элемента с номером " << num << std::endl;
 				std::cout << database[i].logicNumber << "|" << database[i].telNumber << "|" << database[i].name << "|" << database[i].adress << std::endl;
 				std::cout << "\nВведите новое значение элемента" << std::endl;
@@ -193,11 +195,14 @@ void changeElement(unsigned int num)
 				std::cout << "Номер телефона: ";
 				std::getline(std::cin, database[i].telNumber);
 				std::cout << "Данные успешно изменены" << std::endl;
+				std::cout << "Новое значение элемента с номером " << num << std::endl;
+				std::cout << database[i].logicNumber << "|" << database[i].telNumber << "|" << database[i].name << "|" << database[i].adress << std::endl;
 				break;
 			}
 		}
 	}
 	else std::cout << "Массив структур пуст" << std::endl;
+	if (notFound) std::cout << "Элемента с таким номером не существует" << std::endl;
 
 }
 
