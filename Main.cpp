@@ -115,6 +115,7 @@ int main(int argc, char* argv[])
 	} while (menuSwitch != 0);
 	return 0;
 }
+
 void readFile(std::string filename)
 {
 	std::ifstream file;
@@ -147,6 +148,7 @@ void readFile(std::string filename)
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
 }
+
 void writeFile(std::string filename)
 {
 	std::ofstream file;
@@ -166,6 +168,7 @@ void writeFile(std::string filename)
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
 }
+
 void changeElement(unsigned int num)
 {
 	if (database.size() != 0)
@@ -194,6 +197,7 @@ void changeElement(unsigned int num)
 	else std::cout << "Массив структур пуст" << std::endl;
 	
 }
+
 void getElement(unsigned int num)
 {
 	std::cout << std::endl;
@@ -206,6 +210,7 @@ void getElement(unsigned int num)
 		}
 	}
 }
+
 void delElement(unsigned int num)
 {
 	std::cout << std::endl;
@@ -266,6 +271,7 @@ void addElement()
 		}
 	}
 }
+
 unsigned int getNonEmptyNumAmount()
 {
 	unsigned int counter = 0;
@@ -278,10 +284,12 @@ unsigned int getNonEmptyNumAmount()
 	}
 	return counter;
 }
+
 unsigned int getStrAmount()
 {
 	return database.size();
 }
+
 void printDB()
 {
 	if (database.size() != 0)
