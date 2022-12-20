@@ -35,6 +35,7 @@ int main(int argc, char* argv[])
 	std::string filename = "Database.txt";
 	std::cout << "Введите имя файла или путь к файлу для работы:\n";
 	std::cin >> filename;
+	readFile(filename); //чтение из файла в начале работы
 	enum Menu
 	{
 		Exit, //выход из программы
@@ -74,6 +75,7 @@ int main(int argc, char* argv[])
 		switch (menuSwitch)
 		{
 		case Menu::Create:
+			database.clear(); //очистка старых данных в оперативной памяти перед новым считыванием из файла
 			readFile(filename);
 			break;
 		case Menu::Change:
@@ -107,6 +109,7 @@ int main(int argc, char* argv[])
 			writeFile(filename);
 			break;
 		case Menu::Exit:
+			writeFile(filename); //запись в файл в конце работы программы
 			return 0;
 		default:
 			std::cout << "Допускаются только цифры от 0 до 9" << std::endl;
