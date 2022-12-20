@@ -180,21 +180,21 @@ void changeElement(unsigned int num)
 		{
 			if (database[i].logicNumber == num)
 			{
-				database[i].isFree = true;
 				std::cout << "Предыдущее значеие элемента с номером " << num << std::endl;
-				std::cout << database[i].isFree << "|" << database[i].logicNumber << "|" << database[i].telNumber << "|" << database[i].name << "|" << database[i].adress << std::endl;
+				std::cout << database[i].logicNumber << "|" << database[i].telNumber << "|" << database[i].name << "|" << database[i].adress << std::endl;
 				std::cout << "\nВведите новое значение элемента" << std::endl;
+				std::cin.ignore();
 				std::cout << "ФИО: ";
 				std::getline(std::cin, database[i].name);
 				std::cout << "Адрес: ";
-				std::cin.ignore();
+				//std::cin.ignore();
 				std::getline(std::cin, database[i].adress);
-				std::cin.ignore();
+				//std::cin.ignore();
 				std::cout << "Номер телефона: ";
 				std::getline(std::cin, database[i].telNumber);
 				std::cout << "Данные успешно изменены" << std::endl;
+				break;
 			}
-			break;
 		}
 	}
 	else std::cout << "Массив структур пуст" << std::endl;
@@ -203,15 +203,18 @@ void changeElement(unsigned int num)
 
 void getElement(unsigned int num)
 {
+	bool notFound = true;
 	std::cout << std::endl;
 	for (int i = 0; i < database.size(); i++)
 	{
 		if (database[i].logicNumber == num)
 		{
 			std::cout << database[i].logicNumber << "|" << database[i].telNumber << "|" << database[i].name << "|" << database[i].adress << std::endl;
+			notFound = false;
 			break;
 		}
 	}
+	if (notFound) std::cout << "Элемента с таким номером не существует" << std::endl;
 }
 
 void delElement(unsigned int num)
