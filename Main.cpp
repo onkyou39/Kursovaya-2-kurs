@@ -1,4 +1,5 @@
 #define NOMINMAX
+
 #include <locale>
 #include <iostream>
 #include <vector>
@@ -6,6 +7,7 @@
 #include <fstream>
 #include <exception>
 #include <Windows.h>
+
 void readFile(std::string filename);
 void writeFile(std::string filename);
 void changeElement(unsigned int num);
@@ -15,6 +17,7 @@ void addElement();
 unsigned int getNonEmptyNumAmount();
 unsigned int getStrAmount();
 void printDB();
+
 struct People
 {
 	bool isFree = true;
@@ -24,6 +27,7 @@ struct People
 	std::string adress;
 };
 std::vector<People> database;
+
 int main(int argc, char* argv[])
 {
 	SetConsoleCP(1251);
@@ -164,26 +168,31 @@ void writeFile(std::string filename)
 }
 void changeElement(unsigned int num)
 {
-	for (int i = 0; i < database.size(); i++)
+	if (database.size() != 0)
 	{
-		if (database[i].logicNumber == num)
+		for (int i = 0; i < database.size(); i++)
 		{
-			database[i].isFree = true;
-			std::cout << "Предыдущее значеие элемента с номером " << num << std::endl;
-			std::cout << database[i].isFree << "|" << database[i].logicNumber << "|" << database[i].telNumber << "|" << database[i].name << "|" << database[i].adress << std::endl;
-			std::cout << "\nВведите новое значение элемента" << std::endl;
-			std::cout << "ФИО: ";
-			std::getline(std::cin, database[i].name);
-			std::cout << "Адрес: ";
-			std::cin.ignore();
-			std::getline(std::cin, database[i].adress);
-			std::cin.ignore();
-			std::cout << "Номер телефона: ";
-			std::getline(std::cin, database[i].telNumber);
+			if (database[i].logicNumber == num)
+			{
+				database[i].isFree = true;
+				std::cout << "Предыдущее значеие элемента с номером " << num << std::endl;
+				std::cout << database[i].isFree << "|" << database[i].logicNumber << "|" << database[i].telNumber << "|" << database[i].name << "|" << database[i].adress << std::endl;
+				std::cout << "\nВведите новое значение элемента" << std::endl;
+				std::cout << "ФИО: ";
+				std::getline(std::cin, database[i].name);
+				std::cout << "Адрес: ";
+				std::cin.ignore();
+				std::getline(std::cin, database[i].adress);
+				std::cin.ignore();
+				std::cout << "Номер телефона: ";
+				std::getline(std::cin, database[i].telNumber);
+				std::cout << "Данные успешно изменены" << std::endl;
+			}
+			break;
 		}
-		break;
 	}
-	std::cout << "Данные успешно изменены" << std::endl;
+	else std::cout << "Массив структур пуст" << std::endl;
+	
 }
 void getElement(unsigned int num)
 {
