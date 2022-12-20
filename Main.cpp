@@ -33,41 +33,41 @@ int main(int argc, char* argv[])
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	std::string filename = "Database.txt";
-	std::cout << "Введите имя файла или путь к файлу для работы:\n";
+	std::cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ С„Р°Р№Р»Р° РёР»Рё РїСѓС‚СЊ Рє С„Р°Р№Р»Сѓ РґР»СЏ СЂР°Р±РѕС‚С‹:\n";
 	std::cin >> filename;
 	enum Menu
 	{
-		Exit, //выход из программы
-		Create, //создание массива структур из данных текстового файла
-		Change, //изменение значения элемента с заданным (логическим) номером
-		Get_value, //получение значения элемента матрицы с заданным логическим номером
-		Delete, //удаление элемента с заданным логическим номером
-		Add, //добавление элемента в массив 
-		Get_non_empty, //получение текущего количества занятых элементов
-		Get_str_num, //получение текущего количества строк
-		Print, //вывод массива структур на экран
-		Write //запись занятых элементов структур в текстовый файл
+		Exit, //РІС‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹
+		Create, //СЃРѕР·РґР°РЅРёРµ РјР°СЃСЃРёРІР° СЃС‚СЂСѓРєС‚СѓСЂ РёР· РґР°РЅРЅС‹С… С‚РµРєСЃС‚РѕРІРѕРіРѕ С„Р°Р№Р»Р°
+		Change, //РёР·РјРµРЅРµРЅРёРµ Р·РЅР°С‡РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° СЃ Р·Р°РґР°РЅРЅС‹Рј (Р»РѕРіРёС‡РµСЃРєРёРј) РЅРѕРјРµСЂРѕРј
+		Get_value, //РїРѕР»СѓС‡РµРЅРёРµ Р·РЅР°С‡РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РјР°С‚СЂРёС†С‹ СЃ Р·Р°РґР°РЅРЅС‹Рј Р»РѕРіРёС‡РµСЃРєРёРј РЅРѕРјРµСЂРѕРј
+		Delete, //СѓРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° СЃ Р·Р°РґР°РЅРЅС‹Рј Р»РѕРіРёС‡РµСЃРєРёРј РЅРѕРјРµСЂРѕРј
+		Add, //РґРѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РІ РјР°СЃСЃРёРІ 
+		Get_non_empty, //РїРѕР»СѓС‡РµРЅРёРµ С‚РµРєСѓС‰РµРіРѕ РєРѕР»РёС‡РµСЃС‚РІР° Р·Р°РЅСЏС‚С‹С… СЌР»РµРјРµРЅС‚РѕРІ
+		Get_str_num, //РїРѕР»СѓС‡РµРЅРёРµ С‚РµРєСѓС‰РµРіРѕ РєРѕР»РёС‡РµСЃС‚РІР° СЃС‚СЂРѕРє
+		Print, //РІС‹РІРѕРґ РјР°СЃСЃРёРІР° СЃС‚СЂСѓРєС‚СѓСЂ РЅР° СЌРєСЂР°РЅ
+		Write //Р·Р°РїРёСЃСЊ Р·Р°РЅСЏС‚С‹С… СЌР»РµРјРµРЅС‚РѕРІ СЃС‚СЂСѓРєС‚СѓСЂ РІ С‚РµРєСЃС‚РѕРІС‹Р№ С„Р°Р№Р»
 	};
 	unsigned short menuSwitch;
 	do
 	{
-		std::cout << "\nВыберите режим работы программы:" << std::endl;
-		std::cout << "1 - создание массива структур из данных текстового файла" << std::endl;
-		std::cout << "2 - изменение значения элемента с заданным (логическим) номером" << std::endl;
-		std::cout << "3 - получение значения элемента матрицы с заданным логическим номером" << std::endl;
-		std::cout << "4 - удаление элемента с заданным логическим номером" << std::endl;
-		std::cout << "5 - добавление элемента в массив" << std::endl;
-		std::cout << "6 - получение текущего количества занятых элементов" << std::endl;
-		std::cout << "7 - получение текущего количества строк" << std::endl;
-		std::cout << "8 - вывод массива структур на экран" << std::endl;
-		std::cout << "9 - запись занятых элементов структур в текстовый файл" << std::endl;
-		std::cout << "0 - выход из программы" << std::endl;
+		std::cout << "\nР’С‹Р±РµСЂРёС‚Рµ СЂРµР¶РёРј СЂР°Р±РѕС‚С‹ РїСЂРѕРіСЂР°РјРјС‹:" << std::endl;
+		std::cout << "1 - СЃРѕР·РґР°РЅРёРµ РјР°СЃСЃРёРІР° СЃС‚СЂСѓРєС‚СѓСЂ РёР· РґР°РЅРЅС‹С… С‚РµРєСЃС‚РѕРІРѕРіРѕ С„Р°Р№Р»Р°" << std::endl;
+		std::cout << "2 - РёР·РјРµРЅРµРЅРёРµ Р·РЅР°С‡РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° СЃ Р·Р°РґР°РЅРЅС‹Рј (Р»РѕРіРёС‡РµСЃРєРёРј) РЅРѕРјРµСЂРѕРј" << std::endl;
+		std::cout << "3 - РїРѕР»СѓС‡РµРЅРёРµ Р·РЅР°С‡РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РјР°С‚СЂРёС†С‹ СЃ Р·Р°РґР°РЅРЅС‹Рј Р»РѕРіРёС‡РµСЃРєРёРј РЅРѕРјРµСЂРѕРј" << std::endl;
+		std::cout << "4 - СѓРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° СЃ Р·Р°РґР°РЅРЅС‹Рј Р»РѕРіРёС‡РµСЃРєРёРј РЅРѕРјРµСЂРѕРј" << std::endl;
+		std::cout << "5 - РґРѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РІ РјР°СЃСЃРёРІ" << std::endl;
+		std::cout << "6 - РїРѕР»СѓС‡РµРЅРёРµ С‚РµРєСѓС‰РµРіРѕ РєРѕР»РёС‡РµСЃС‚РІР° Р·Р°РЅСЏС‚С‹С… СЌР»РµРјРµРЅС‚РѕРІ" << std::endl;
+		std::cout << "7 - РїРѕР»СѓС‡РµРЅРёРµ С‚РµРєСѓС‰РµРіРѕ РєРѕР»РёС‡РµСЃС‚РІР° СЃС‚СЂРѕРє" << std::endl;
+		std::cout << "8 - РІС‹РІРѕРґ РјР°СЃСЃРёРІР° СЃС‚СЂСѓРєС‚СѓСЂ РЅР° СЌРєСЂР°РЅ" << std::endl;
+		std::cout << "9 - Р·Р°РїРёСЃСЊ Р·Р°РЅСЏС‚С‹С… СЌР»РµРјРµРЅС‚РѕРІ СЃС‚СЂСѓРєС‚СѓСЂ РІ С‚РµРєСЃС‚РѕРІС‹Р№ С„Р°Р№Р»" << std::endl;
+		std::cout << "0 - РІС‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹" << std::endl;
 		std::cin >> menuSwitch;
 		if (std::cin.fail())
 		{
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			std::cout << "Выбор в меню осуществляется только цифрами от 0 до 9" << std::endl;
+			std::cout << "Р’С‹Р±РѕСЂ РІ РјРµРЅСЋ РѕСЃСѓС‰РµСЃС‚РІР»СЏРµС‚СЃСЏ С‚РѕР»СЊРєРѕ С†РёС„СЂР°РјРё РѕС‚ 0 РґРѕ 9" << std::endl;
 			continue;
 		}
 		unsigned int num;
@@ -77,17 +77,17 @@ int main(int argc, char* argv[])
 			readFile(filename);
 			break;
 		case Menu::Change:
-			std::cout << "Введите номер элемента, значение которого вы хотите изменить: ";
+			std::cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЌР»РµРјРµРЅС‚Р°, Р·РЅР°С‡РµРЅРёРµ РєРѕС‚РѕСЂРѕРіРѕ РІС‹ С…РѕС‚РёС‚Рµ РёР·РјРµРЅРёС‚СЊ: ";
 			std::cin >> num;
 			changeElement(num);
 			break;
 		case Menu::Get_value:
-			std::cout << "Введите номер элемента, значение которого вы хотите получить: ";
+			std::cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЌР»РµРјРµРЅС‚Р°, Р·РЅР°С‡РµРЅРёРµ РєРѕС‚РѕСЂРѕРіРѕ РІС‹ С…РѕС‚РёС‚Рµ РїРѕР»СѓС‡РёС‚СЊ: ";
 			std::cin >> num;
 			getElement(num);
 			break;
 		case Menu::Delete:
-			std::cout << "Введите номер элемента, который вы хотите удалить: ";
+			std::cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЌР»РµРјРµРЅС‚Р°, РєРѕС‚РѕСЂС‹Р№ РІС‹ С…РѕС‚РёС‚Рµ СѓРґР°Р»РёС‚СЊ: ";
 			std::cin >> num;
 			delElement(num);
 			break;
@@ -95,10 +95,10 @@ int main(int argc, char* argv[])
 			addElement();
 			break;
 		case Menu::Get_non_empty:
-			std::cout << "В массиве " << getNonEmptyNumAmount() << " занятых элементов" << std::endl;
+			std::cout << "Р’ РјР°СЃСЃРёРІРµ " << getNonEmptyNumAmount() << " Р·Р°РЅСЏС‚С‹С… СЌР»РµРјРµРЅС‚РѕРІ" << std::endl;
 			break;
 		case Menu::Get_str_num:
-			std::cout << "В массиве " << getStrAmount() << " строк" << std::endl;
+			std::cout << "Р’ РјР°СЃСЃРёРІРµ " << getStrAmount() << " СЃС‚СЂРѕРє" << std::endl;
 			break;
 		case Menu::Print:
 			printDB();
@@ -109,7 +109,7 @@ int main(int argc, char* argv[])
 		case Menu::Exit:
 			return 0;
 		default:
-			std::cout << "Допускаются только цифры от 0 до 9" << std::endl;
+			std::cout << "Р”РѕРїСѓСЃРєР°СЋС‚СЃСЏ С‚РѕР»СЊРєРѕ С†РёС„СЂС‹ РѕС‚ 0 РґРѕ 9" << std::endl;
 			break;
 		}
 	} while (menuSwitch != 0);
@@ -141,7 +141,7 @@ void readFile(std::string filename)
 			database.push_back(tmp);
 		}
 		file.close();
-		std::cout << "Успешное чтение из файла " << filename << std::endl;
+		std::cout << "РЈСЃРїРµС€РЅРѕРµ С‡С‚РµРЅРёРµ РёР· С„Р°Р№Р»Р° " << filename << std::endl;
 	}
 	catch (std::invalid_argument& e)
 	{
@@ -161,7 +161,7 @@ void writeFile(std::string filename)
 			file << database[i].isFree << "|" << database[i].logicNumber << "|" << database[i].telNumber << "|" << database[i].name << "|" << database[i].adress << std::endl;
 		}
 		file.close();
-		std::cout << "Успешная запись в файл " << filename << std::endl;
+		std::cout << "РЈСЃРїРµС€РЅР°СЏ Р·Р°РїРёСЃСЊ РІ С„Р°Р№Р» " << filename << std::endl;
 	}
 	catch (std::invalid_argument& e)
 	{
@@ -178,23 +178,23 @@ void changeElement(unsigned int num)
 			if (database[i].logicNumber == num)
 			{
 				database[i].isFree = true;
-				std::cout << "Предыдущее значеие элемента с номером " << num << std::endl;
+				std::cout << "РџСЂРµРґС‹РґСѓС‰РµРµ Р·РЅР°С‡РµРёРµ СЌР»РµРјРµРЅС‚Р° СЃ РЅРѕРјРµСЂРѕРј " << num << std::endl;
 				std::cout << database[i].isFree << "|" << database[i].logicNumber << "|" << database[i].telNumber << "|" << database[i].name << "|" << database[i].adress << std::endl;
-				std::cout << "\nВведите новое значение элемента" << std::endl;
-				std::cout << "ФИО: ";
+				std::cout << "\nР’РІРµРґРёС‚Рµ РЅРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р°" << std::endl;
+				std::cout << "Р¤РРћ: ";
 				std::getline(std::cin, database[i].name);
-				std::cout << "Адрес: ";
+				std::cout << "РђРґСЂРµСЃ: ";
 				std::cin.ignore();
 				std::getline(std::cin, database[i].adress);
 				std::cin.ignore();
-				std::cout << "Номер телефона: ";
+				std::cout << "РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°: ";
 				std::getline(std::cin, database[i].telNumber);
-				std::cout << "Данные успешно изменены" << std::endl;
+				std::cout << "Р”Р°РЅРЅС‹Рµ СѓСЃРїРµС€РЅРѕ РёР·РјРµРЅРµРЅС‹" << std::endl;
 			}
 			break;
 		}
 	}
-	else std::cout << "Массив структур пуст" << std::endl;
+	else std::cout << "РњР°СЃСЃРёРІ СЃС‚СЂСѓРєС‚СѓСЂ РїСѓСЃС‚" << std::endl;
 	
 }
 
@@ -222,12 +222,12 @@ void delElement(unsigned int num)
 			break;
 		}
 	}
-	std::cout << "Элемент с номером " << num << " успешно удалён" << std::endl;
+	std::cout << "Р­Р»РµРјРµРЅС‚ СЃ РЅРѕРјРµСЂРѕРј " << num << " СѓСЃРїРµС€РЅРѕ СѓРґР°Р»С‘РЅ" << std::endl;
 }
 void addElement()
 {
-	std::cout << "\nРежим добавления элемента\n";
-	for (int i = 0; i < database.size(); i++) //сжатие массива
+	std::cout << "\nР РµР¶РёРј РґРѕР±Р°РІР»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р°\n";
+	for (int i = 0; i < database.size(); i++) //СЃР¶Р°С‚РёРµ РјР°СЃСЃРёРІР°
 	{
 		if (database[i].isFree)
 		{
@@ -238,30 +238,30 @@ void addElement()
 	bool switch_on = true;
 	while (switch_on)
 	{
-		std::cout << "Введите номер операции, 1 - добавить элемент, 0 - выход из цикла\n";
+		std::cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РѕРїРµСЂР°С†РёРё, 1 - РґРѕР±Р°РІРёС‚СЊ СЌР»РµРјРµРЅС‚, 0 - РІС‹С…РѕРґ РёР· С†РёРєР»Р°\n";
 		std::cin >> switch_on;
 		if (std::cin.fail())
 		{
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			std::cout << "Допускаются только цифры от 0 до 1\n" << std::endl;
+			std::cout << "Р”РѕРїСѓСЃРєР°СЋС‚СЃСЏ С‚РѕР»СЊРєРѕ С†РёС„СЂС‹ РѕС‚ 0 РґРѕ 1\n" << std::endl;
 			continue;
 		}
 		std::string input;
-		int last; //индекс последнего элемента массива
+		int last; //РёРЅРґРµРєСЃ РїРѕСЃР»РµРґРЅРµРіРѕ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР°
 		switch (switch_on)
 		{
 		case 1:
 			std::cin.ignore();
-			std::cout << "ФИО: ";
+			std::cout << "Р¤РРћ: ";
 			std::getline(std::cin, tmp.name);
-			std::cout << "Адрес: ";
+			std::cout << "РђРґСЂРµСЃ: ";
 			//std::cin.ignore();
 			std::getline(std::cin, tmp.adress);
 			//std::cin.ignore();
-			std::cout << "Номер телефона: ";
+			std::cout << "РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°: ";
 			std::getline(std::cin, tmp.telNumber);
-			last = database.size() - 1; //последний элемент массива
+			last = database.size() - 1; //РїРѕСЃР»РµРґРЅРёР№ СЌР»РµРјРµРЅС‚ РјР°СЃСЃРёРІР°
 			if (database.size() != 0) tmp.logicNumber = database[last].logicNumber + 1;
 			tmp.isFree = false;
 			database.push_back(tmp);
@@ -296,13 +296,13 @@ void printDB()
 	{
 		for (int i = 0; i < database.size(); i++)
 		{
-			//печатаются только не пустые элементы массива
+			//РїРµС‡Р°С‚Р°СЋС‚СЃСЏ С‚РѕР»СЊРєРѕ РЅРµ РїСѓСЃС‚С‹Рµ СЌР»РµРјРµРЅС‚С‹ РјР°СЃСЃРёРІР°
 			if (database[i].isFree != true)
 				std::cout << database[i].logicNumber << "|" << database[i].telNumber << "|" << database[i].name << "|" << database[i].adress << std::endl;
 		}
 	}
 	else
 	{
-		std::cout << "Массив структур пуст" << std::endl;
+		std::cout << "РњР°СЃСЃРёРІ СЃС‚СЂСѓРєС‚СѓСЂ РїСѓСЃС‚" << std::endl;
 	}
 }
