@@ -189,9 +189,7 @@ void changeElement(unsigned int num)
 				std::cout << "ФИО: ";
 				std::getline(std::cin, database[i].name);
 				std::cout << "Адрес: ";
-				//std::cin.ignore();
 				std::getline(std::cin, database[i].adress);
-				//std::cin.ignore();
 				std::cout << "Номер телефона: ";
 				std::getline(std::cin, database[i].telNumber);
 				std::cout << "Данные успешно изменены" << std::endl;
