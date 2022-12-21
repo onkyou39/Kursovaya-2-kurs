@@ -265,9 +265,7 @@ void addElement()
 			std::cout << "ФИО: ";
 			std::getline(std::cin, tmp.name);
 			std::cout << "Адрес: ";
-			//std::cin.ignore();
 			std::getline(std::cin, tmp.adress);
-			//std::cin.ignore();
 			std::cout << "Номер телефона: ";
 			std::getline(std::cin, tmp.telNumber);
 			last = database.size() - 1; //последний элемент массива
